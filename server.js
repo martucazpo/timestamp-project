@@ -36,11 +36,11 @@ app.get("/api/hello", function (req, res) {
 app.get('/api/timestamp', (req, res) => {
   let date = new Date();
   let unix = date.getTime();
-  let UTC = date.toUTCString();
+  let utc = date.toUTCString();
 
   res.send({
     unix,
-    UTC
+    utc
   });
 });
 
@@ -55,11 +55,11 @@ app.get("/api/timestamp/:date_string", (req, res) => {
     let date = new Date(parseInt(date_string));
 
     let unix = date.getTime();
-    let UTC = date.toUTCString();
+    let utc = date.toUTCString();
 
     return res.json({
       unix,
-      UTC
+      utc
     });
 
   }
@@ -71,11 +71,11 @@ app.get("/api/timestamp/:date_string", (req, res) => {
 
   } else {
     let unix = date.getTime();
-    let UTC = date.toUTCString();
+    let utc = date.toUTCString();
 
     return res.json({
       unix,
-      UTC
+      utc
     });
   }
 });
